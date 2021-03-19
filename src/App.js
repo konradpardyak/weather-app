@@ -6,7 +6,7 @@ import Content from './Content';
 const App = () => {
   const [cityName, setCityName] = useState("London");
   const [cityInfo, setCityInfo] = useState();
-  const [weather, setWeather] = useState();
+  const [weather, setWeather] = useState(true);
 
   useEffect(() => {
     const API_KEY = "8474678f08288c9925e4023da4548128";
