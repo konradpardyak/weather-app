@@ -1,13 +1,17 @@
 import './Content.scss';
+import City from './City';
 
 const Content = (props) => {
-  const {cityInfo, weather} = props;
+  const {cityName, weather} = props;
+  console.log(weather);
 
   return(
     <div className="content">
 
       <div className="container container-main container-header">
-        <div className="item item-inner item-header">City</div>
+        <div className="item item-inner item-header">
+          <City city={cityName} timezone={weather.timezone_offset}/>
+        </div>
         <div className="item item-inner item-header">Search</div>
       </div>
 
