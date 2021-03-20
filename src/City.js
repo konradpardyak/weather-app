@@ -25,12 +25,18 @@ const City = (props) => {
       minute -= 60;
     }
 
-    if(hour > 23) {
-      weekday ++;
-      hour -= 24;
-    } else if(hour < 0) {
+     if(hour < 0) {
       weekday --;
       hour += 24;
+    } else if(hour > 23) {
+      weekday ++;
+      hour -= 24;
+    }
+
+    if(weekday < 0) {
+      weekday += 7;
+    } else if(weekday > 6) {
+      weekday -= 7;
     }
 
     setWeekday(weekday);
@@ -45,10 +51,10 @@ const City = (props) => {
   }, [city,timezone]);
 
   return(
-    <>
-    <h1 className="cityName">{city}</h1>
-    <p className="time">{`${weekdays[weekday]} ${hour<10 ? "0" : ""}${hour}:${minute<10 ? "0" : ""}${minute}`}</p>
-    </>
+    <div className="city">
+      <h1 className="cityName">{city}</h1>
+      <p className="time">{`${weekdays[weekday]} ${hour<10 ? "0" : ""}${hour}:${minute<10 ? "0" : ""}${minute}`}</p>
+    </div>
   )
 }
 
