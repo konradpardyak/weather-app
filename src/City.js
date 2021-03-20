@@ -42,7 +42,7 @@ const City = (props) => {
     makeTime();
     const timeout = setInterval(() => makeTime(), 1000);
     return () => clearInterval(timeout);
-  }, []);
+  }, [city,timezone]);
 
   return(
     <>

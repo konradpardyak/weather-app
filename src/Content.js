@@ -1,9 +1,9 @@
 import './Content.scss';
 import City from './City';
+import Search from './Search';
 
 const Content = (props) => {
-  const {cityName, weather} = props;
-  console.log(weather);
+  const {cityName, setCityName, weather, showError} = props;
 
   return(
     <div className="content">
@@ -12,7 +12,9 @@ const Content = (props) => {
         <div className="item item-inner item-header">
           <City city={cityName} timezone={weather.timezone_offset}/>
         </div>
-        <div className="item item-inner item-header">Search</div>
+        <div className="item item-inner item-header">
+          <Search setCityName={setCityName} showError={showError} />
+        </div>
       </div>
 
       <div className="container container-main">
