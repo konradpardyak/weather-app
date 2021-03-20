@@ -7,15 +7,12 @@ const City = (props) => {
   const [weekday, setWeekday] = useState(0);
   const [hour, setHour] = useState(0);
   const [minute, setminute] = useState(0);
-  const [second, setSecond] = useState(null);
 
   const makeTime = () => {
     const date = new Date();
     let weekday = date.getDay();
-    
     let hour = date.getUTCHours();
     let minute = date.getUTCMinutes();
-    let second = date.getUTCSeconds();
 
     hour = hour + Math.floor(timezone/3600);
     minute += (timezone%3600/60);
@@ -39,14 +36,13 @@ const City = (props) => {
     setWeekday(weekday);
     setHour(hour);
     setminute(minute);
-    setSecond(second)
   }
 
   useEffect(() => {
     makeTime();
-    const timeout = setTimeout(() => makeTime(), 1000);
-    return () => clearTimeout(timeout);
-  }, [second]);
+    const timeout = setInterval(() => makeTime(), 1000);
+    return () => clearInterval(timeout);
+  }, []);
 
   return(
     <>
