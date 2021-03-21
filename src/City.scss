@@ -1,3 +1,11 @@
+.city {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    align-items: flex-start;
+  }
+}
 .cityName {
   font-size: 1.8rem;
   font-weight: 100;
