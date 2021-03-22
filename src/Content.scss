@@ -65,6 +65,14 @@ body{
     flex-direction: row;
   }
 }
+.item-temperature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-conditions {
+  flex-grow: 1;
+}
 .container-more {
   flex-direction: column;
   justify-content: space-between;

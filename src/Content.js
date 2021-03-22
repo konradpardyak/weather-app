@@ -2,6 +2,7 @@ import './Content.scss';
 import City from './City';
 import Search from './Search';
 import Temperature from './Temperature';
+import Conditions from './Conditions';
 
 const Content = (props) => {
   const {cityName, setCityName, weather, showError} = props;
@@ -23,10 +24,12 @@ const Content = (props) => {
         <div className="item item-left container container-side">
 
           <div className="item container container-weather">
-            <div className="item item-inner">
+            <div className="item item-inner item-temperature">
               <Temperature temperature={weather.current.temp} />
             </div>
-            <div className="item item-inner">Icon</div>
+            <div className="item item-inner item-conditions">
+              <Conditions weather={weather.current.weather[0]} temp={weather.daily[0].temp} />
+            </div>
           </div>
 
           <div className="item item-inner">Hourly prediction</div>
