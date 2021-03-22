@@ -3,10 +3,11 @@ import City from './City';
 import Search from './Search';
 import Temperature from './Temperature';
 import Conditions from './Conditions';
+import Details from './Details';
 
 const Content = (props) => {
   const {cityName, setCityName, weather, showError} = props;
-
+  
   return(
     <div className="content">
 
@@ -39,7 +40,15 @@ const Content = (props) => {
         <div className="item item-right container container-side">
 
           <div className="item container container-more">
-            <div className="item item-inner item-details">Details</div>
+            <div className="item item-inner item-details">
+              <Details 
+              feels={weather.current.feels_like}
+              wind={weather.current.wind_speed} 
+              humidity={weather.current.humidity} 
+              pressure={weather.current.pressure}
+              uvi={weather.current.uvi}
+              clouds={weather.current.clouds} />
+            </div>
             <div className="item item-inner item-next">Next 7 days</div>
           </div>
 
