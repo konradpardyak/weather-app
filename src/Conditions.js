@@ -1,4 +1,3 @@
-import './css/weather-icons.min.css'
 import './Conditions.scss';
 import Icon from './Icon.js';
 
