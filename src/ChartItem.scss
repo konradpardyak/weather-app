@@ -1,0 +1,35 @@
+.chart-item {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.3rem;
+  .chart-item-time {
+    font-size: .7rem;
+    font-weight: 300;
+  }
+  .column {
+    margin: .5rem 0;
+    width: 100%;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    .temp {
+      font-size: .95rem;
+    }
+    .fill {
+      width: calc(100% - 1px);
+      background-color: rgba(255, 255, 255, 0.15);
+      border-bottom: 0.01rem solid rgba(255, 255, 255, 1);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      .rain-snow {
+        font-size: .75rem;
+      }
+    }
+  }
+}

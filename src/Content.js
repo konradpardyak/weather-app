@@ -4,10 +4,11 @@ import Search from './Search';
 import Temperature from './Temperature';
 import Conditions from './Conditions';
 import Details from './Details';
+import Hourly from './Hourly';
 
 const Content = (props) => {
   const {cityName, setCityName, weather, showError} = props;
-  
+
   return(
     <div className="content">
 
@@ -33,7 +34,9 @@ const Content = (props) => {
             </div>
           </div>
 
-          <div className="item item-inner">Hourly prediction</div>
+          <div className="item item-inner">
+            <Hourly hourlyArray={weather.hourly} timezone={weather.timezone_offset} />
+          </div>
 
         </div>
 
