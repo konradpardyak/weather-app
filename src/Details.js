@@ -9,12 +9,12 @@ const Details = (props) => {
       <div className="tail">
         <i className="wi wi-thermometer"></i>
         <span>Feels like</span>
-        <span className="value">{Math.floor(feels)}<div className="degree"></div></span>
+        <span className="value">{Math.round(feels)}<div className="degree"></div></span>
       </div>
       <div className="tail">
         <i className="wi wi-strong-wind"></i>
         <span>Wind</span>
-        <span className="value">{Math.floor(wind*3.6)} km/h</span>
+        <span className="value">{Math.round(wind*3.6)} km/h</span>
       </div>
       <div className="tail">
         <i className="wi wi-humidity"></i>
@@ -29,7 +29,7 @@ const Details = (props) => {
       <div className="tail">
         <i className="wi wi-sunrise"></i>
         <span>UV index</span>
-        <span className="value">{Math.floor(uvi)}</span>
+        <span className="value">{Math.round(uvi)}</span>
       </div>
       <div className="tail">
         <i className="wi wi-cloud"></i>
