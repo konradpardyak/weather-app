@@ -1,11 +1,12 @@
 import './css/weather-icons.min.css'
 import './Details.scss';
+import Title from './Title';
 
 const Details = (props) => {
   const {feels, wind, humidity, pressure, uvi, clouds} = props;
   return(
     <div className="details">
-      <div className="title">DETAILS<span className="line"></span></div>
+      <Title title="DETAILS" />
       <div className="tail">
         <i className="wi wi-thermometer"></i>
         <span>Feels like</span>
