@@ -11,9 +11,9 @@ const App = () => {
 
   useEffect(() => {
     const API_KEY = "8474678f08288c9925e4023da4548128";
-    axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}`).then((res) => {
+    axios.get(`//api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}`).then((res) => {
       const responseCityInfo = res.data;
-      axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${res.data.city.coord.lat}&lon=${res.data.city.coord.lon}&units=metric&exclude=minutely&appid=${API_KEY}`).then((res) =>{
+      axios.get(`//api.openweathermap.org/data/2.5/onecall?lat=${res.data.city.coord.lat}&lon=${res.data.city.coord.lon}&units=metric&exclude=minutely&appid=${API_KEY}`).then((res) =>{
         const responseWeather = res.data;
         setShowError(false);
         setCityInfo(responseCityInfo.city);
@@ -28,7 +28,7 @@ const App = () => {
   }, [cityName]);
   
   return (
-    <div className="App">
+    <div>
       {
         weather ? <Content cityName={cityInfo.name} weather={weather} setCityName={setCityName} showError={showError} /> : <div>Loading page</div>
       }
