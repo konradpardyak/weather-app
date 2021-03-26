@@ -4,7 +4,6 @@ $sm: 600px;
 $md: 960px;
 
 body{
-  background-image: linear-gradient(#112158, #9762a2);
   min-height: 100vh;
   color: white;
   font-family: 'Roboto', sans-serif;
@@ -17,7 +16,7 @@ body{
 .content {
   padding: 8px 0;
   @media (min-width: $md) {
-    padding: 8px 10%;
+    padding: 16px 10%;
   }
 }
 .container {
@@ -32,6 +31,7 @@ body{
   @media (min-width: $md) {
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 3%;
   }
 }
 .container-header {
@@ -44,16 +44,16 @@ body{
   flex-basis: 0;
 }
 .item-inner {
-  margin: 0 8px 8px 8px;
+  margin: 0 12px 12px 12px;
 }
 .item-header {
   flex-grow: 1;
 }
 .item-left {
-  flex-grow: 2;
+  flex-grow: 3;
 }
 .item-right {
-  flex-grow: 3;
+  flex-grow: 4;
 }
 .container-side {
   flex-direction: column;
@@ -81,10 +81,16 @@ body{
   }
 }
 .item-details {
-  flex-grow: 3;
+  flex-grow: 1;
+  @media (min-width: $md) {
+    flex-grow: 3;
+  }
 }
 .item-next {
-  flex-grow: 2;
+  flex-grow: 1;
+  @media (min-width: $md) {
+    flex-grow: 2;
+  }
 }
 .degree {
   width: .3rem;
