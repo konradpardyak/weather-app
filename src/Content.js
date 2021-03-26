@@ -5,6 +5,7 @@ import Temperature from './Temperature';
 import Conditions from './Conditions';
 import Details from './Details';
 import Hourly from './Hourly';
+import Daily from './Daily';
 
 const Content = (props) => {
   const {cityName, setCityName, weather, showError} = props;
@@ -52,7 +53,9 @@ const Content = (props) => {
               uvi={weather.current.uvi}
               clouds={weather.current.clouds} />
             </div>
-            <div className="item item-inner item-next">Next 7 days</div>
+            <div className="item item-inner item-next">
+              <Daily dailyArray={weather.daily} timezone={weather.timezone_offset} />
+            </div>
           </div>
 
           <div className="item item-inner">Allerts</div>

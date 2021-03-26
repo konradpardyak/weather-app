@@ -1,0 +1,11 @@
+.daily {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.daily-list {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
