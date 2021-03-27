@@ -35,7 +35,7 @@ const Content = (props) => {
             </div>
           </div>
 
-          <div className="item item-inner">
+          <div className="item item-inner item-hourly">
             <Hourly hourlyArray={weather.hourly} timezone={weather.timezone_offset} />
           </div>
 

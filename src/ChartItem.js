@@ -12,7 +12,7 @@ const ChartItem = (props) => {
       <Icon icon={icon} />
       <div className="column">
         <div className="temp">{Math.round(temp)}<div className="degree"></div></div>
-        <div className="fill" style={{height: (`calc(${fillHeight}px + 40px)`)}}></div>
+        <div className="fill" style={{height: (`calc(${fillHeight}px + 60px)`)}}></div>
       </div>
       <div className="chart-item-time">{`${hour<10 ? "0" : ""}${hour}:${minute<10 ? "0" : ""}${minute}`}</div>
     </div>

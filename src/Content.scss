@@ -86,6 +86,9 @@ body{
     flex-grow: 3;
   }
 }
+.item-hourly {
+  flex-grow: 1;
+}
 .item-next {
   flex-grow: 1;
   @media (min-width: $md) {
