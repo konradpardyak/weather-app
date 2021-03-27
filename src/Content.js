@@ -6,6 +6,7 @@ import Conditions from './Conditions';
 import Details from './Details';
 import Hourly from './Hourly';
 import Daily from './Daily';
+import Alerts from './Alerts';
 
 const Content = (props) => {
   const {cityName, setCityName, weather, showError} = props;
@@ -58,7 +59,9 @@ const Content = (props) => {
             </div>
           </div>
 
-          <div className="item item-inner">Allerts</div>
+          <div className="item item-inner item-alerts">
+            <Alerts alerts={weather.alerts} />
+          </div>
 
         </div>
 
