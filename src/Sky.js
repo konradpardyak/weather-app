@@ -2,7 +2,8 @@ import './Sky.scss';
 
 const Sky = (props) => {
 
-  const {condition, temperature, currentTime, sunset, sunrise} = props;
+  const {condition, conditionDescription, currentTime, sunset, sunrise} = props;
+  console.log(conditionDescription);
 
   const dayTimeResponse = (currentTime, sunset, sunrise) => {
     if(currentTime < sunrise  || currentTime > sunset) return "night";
@@ -12,72 +13,54 @@ const Sky = (props) => {
 
   const dayTime = dayTimeResponse(currentTime, sunset, sunrise);
 
-  const background = (condition, temperature) => {
+  const background = (condition, conditionDescription) => {
     if(condition === "Clear") {
-      if(dayTime === "day") {
-        if(temperature > 0) return "linear-gradient(#4da4d9, #88bce6)";
-        return "linear-gradient(#3a75d3, #cbe5fe)";
-      }
-      if(dayTime === "sunsetSunrise") return "linear-gradient(#810f63, #f94f39)";
-      return "linear-gradient(#0d2644, #654079)";
+      if(dayTime === "day") return "linear-gradient(#20a1f0, #23d3da)";
+      if(dayTime === "sunsetSunrise") return "linear-gradient(180deg, rgba(129,15,99,1) 0%, rgba(188,46,78,1) 30%, rgba(249,79,57,1) 75%, rgba(249,130,57,1) 100%)";
     }
-
     if(condition === "Clouds") {
-      if(dayTime === "day") return "linear-gradient(#7196b3, #bbcdd7)";
-      if(dayTime === "sunsetSunrise") return "linear-gradient(#5a7f9b, #ffc0a4)";
-      return "linear-gradient(#0d2644, #654079)";
+      if(dayTime === "day") {
+        if(conditionDescription === "few clouds") return "linear-gradient(#68798e, #86d5e9)";
+        return "linear-gradient(#445467, #a8c3d2)";
+      }
+      if(dayTime === "sunsetSunrise") return "linear-gradient(#445467, #cfa896)";
     }
-
     if(condition === "Drizzle") {
-      if(dayTime === "day") return "linear-gradient(#bfc9d5, #8498a3)";
-      if(dayTime === "sunsetSunrise") return "linear-gradient(#cec9c6, #8498a3)";
-      return "linear-gradient(#0d2644, #654079)";
+      if(dayTime === "day") return "linear-gradient(#99a9af, #32545c)";
+      if(dayTime === "sunsetSunrise") return "linear-gradient(#c2b4b0, #32545c)";
     }
-
     if(condition === "Rain") {
-      if(dayTime === "day") return "linear-gradient(#63868f, #a8cacc)";
-      if(dayTime === "sunsetSunrise") return "linear-gradient(#63868f, #d0c4c6)";
-      return "linear-gradient(#0d2644, #654079)";
+      if(dayTime === "day") return "linear-gradient(#32545c, #9ebbc6)";
+      if(dayTime === "sunsetSunrise") return "linear-gradient(#32545c, #cfa896)";
     }
-
     if(condition === "Thunderstorm") {
-      if(dayTime === "day") return "linear-gradient(#143347, #aea9af)";
-      if(dayTime === "sunsetSunrise") return "linear-gradient(#143347, #bda9a5)";
-      return "linear-gradient(#0d2644, #654079)";
+      if(dayTime === "day") return "linear-gradient(#343b45, #aca9c2)";
+      if(dayTime === "sunsetSunrise") return "linear-gradient(#343b45, #c2a9bd)";
     }
-
     if(condition === "Snow") {
       if(dayTime === "day") return "linear-gradient(#939097, #cecfcc)";
       if(dayTime === "sunsetSunrise") return "linear-gradient(#939097, #f0e4d6)";
-      return "linear-gradient(#0d2644, #654079)";
     }
-
     if(condition === "Mist" || condition === "Fog") {
       if(dayTime === "day") return "linear-gradient(#c9c8d7, #9b9aa7)";
       if(dayTime === "sunsetSunrise") return "linear-gradient(#e0cccd, #96959a)";
-      return "linear-gradient(#0d2644, #654079)";
     }
-
     if(condition === "Smoke" || condition === "Haze") {
       if(dayTime === "day" || dayTime === "sunsetSunrise") return "linear-gradient(#c6bfb7, #9e9993)";
-      return "linear-gradient(#0d2644, #654079)";
     }
-
     if(condition === "Dust" || condition === "Sand") {
       if(dayTime === "day" || dayTime === "sunsetSunrise") return "linear-gradient(#b17239, #dba660)";
-      return "linear-gradient(#0d2644, #654079)";
     }
     if(condition === "Squall" || condition === "Tornado") {
       if(dayTime === "day" || dayTime === "sunsetSunrise") return "linear-gradient(#35333b, #b3957f)";
-      return "linear-gradient(#0d2644, #654079)";
     }
     if(condition === "Ash") {
       if(dayTime === "day" || dayTime === "sunsetSunrise") return "linear-gradient(#444d58, #bdc2c9)";
-      return "linear-gradient(#0d2644, #654079)";
     }
+    return "linear-gradient(#0d2644, #400d5b)";
   }
 
-  const backgroundStyle = background(condition, temperature);
+  const backgroundStyle = background(condition, conditionDescription);
 
   return(
     <div className="sky" style={{backgroundImage: backgroundStyle}}>

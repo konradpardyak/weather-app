@@ -15,7 +15,7 @@ const Content = (props) => {
   return(
     <Sky
     condition={weather.current.weather[0].main}
-    temperature={weather.current.temp}
+    conditionDescription={weather.current.weather[0].description}
     currentTime={weather.current.dt}
     sunset={weather.current.sunset}
     sunrise={weather.current.sunrise}
