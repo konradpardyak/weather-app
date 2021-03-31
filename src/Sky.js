@@ -3,7 +3,6 @@ import './Sky.scss';
 const Sky = (props) => {
 
   const {condition, conditionDescription, currentTime, sunset, sunrise} = props;
-  console.log(conditionDescription);
 
   const dayTimeResponse = (currentTime, sunset, sunrise) => {
     if(currentTime < sunrise  || currentTime > sunset) return "night";
